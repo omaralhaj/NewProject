@@ -3,10 +3,6 @@ package mypackage.habittracker;
 
 import android.provider.BaseColumns;
 
-/**
- * Created by Omar on 9/18/17.
- */
-
 public class HabitContract  {
 
 

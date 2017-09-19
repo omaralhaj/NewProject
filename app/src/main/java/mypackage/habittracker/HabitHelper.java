@@ -4,9 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by Omar on 9/18/17.
- */
+
 
 public class HabitHelper extends SQLiteOpenHelper {
 
@@ -23,7 +21,7 @@ public class HabitHelper extends SQLiteOpenHelper {
         String SQL_CREATE_ENTRIES = "CREATE TABLE " + HabitContract.HabitEntry.TABLE_NAME + " (" +
                 HabitContract.HabitEntry._ID + " INTEGER PRIMARY KEY," +
                 HabitContract.HabitEntry.COLUMN_NAME + " TEXT," +
-                HabitContract.HabitEntry.COLUMN_BIRTH + " TEXT," +
+                HabitContract.HabitEntry.COLUMN_BIRTH + " INTEGER," +
                 HabitContract.HabitEntry.COLUMN_HABIT + " TEXT)";
 
         db.execSQL(SQL_CREATE_ENTRIES);

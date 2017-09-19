@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,13 +15,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        putValues("Omar" , 1997 ,"Programming");
+        readValues("Omar");
+
+    }
+
+    public void putValues(String name, int birth , String habit){
+
         HabitHelper mDbHelper = new HabitHelper(this);
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(HabitContract.HabitEntry.COLUMN_NAME, "Omar");
-        values.put(HabitContract.HabitEntry.COLUMN_BIRTH, "1997");
-        values.put(HabitContract.HabitEntry.COLUMN_HABIT, "Programming");
+        values.put(HabitContract.HabitEntry.COLUMN_NAME, name);
+        values.put(HabitContract.HabitEntry.COLUMN_BIRTH, birth);
+        values.put(HabitContract.HabitEntry.COLUMN_HABIT, habit);
 
         long newRowId = db.insert(HabitContract.HabitEntry.TABLE_NAME, null, values);
 
@@ -29,8 +37,13 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Habit saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
         }
+    }
 
-        db = mDbHelper.getReadableDatabase();
+
+    public Cursor readValues( String name){
+        HabitHelper mDbHelper = new HabitHelper(this);
+
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
         String[] projection = {
                 HabitContract.HabitEntry._ID,
                 HabitContract.HabitEntry.COLUMN_NAME,
@@ -39,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         String selection = HabitContract.HabitEntry.COLUMN_NAME + " = ?";
-        String[] selectionArgs = {"Omar"};
+        String[] selectionArgs = {name};
 
         String sortOrder =
                 HabitContract.HabitEntry._ID + " DESC";
@@ -63,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+        return cursor;
 
     }
 
