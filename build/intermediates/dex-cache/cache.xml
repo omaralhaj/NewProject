@@ -3,48 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/Users/alhajery/Desktop/MarketInventory/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/alhajery/Downloads/NewProject-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="973446173d4a3aa3c8615b0a1a418e2d581c924b">
-        <dex dex="/Users/alhajery/Desktop/MarketInventory/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1ea0ff8028069e13db339427da50cee0a2be3ee5/classes.dex" />
+        sha1="7844e00d994b674311ed49dca6d2464e18ae903d">
+        <dex dex="/Users/alhajery/Downloads/NewProject-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_35024d1792ee37e88b6bb6bbe0ee7f8825a5451f/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/alhajery/.android/build-cache/d4140a328bde534d55f9237f947b48e1074ed2e7/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
-        <dex dex="/Users/alhajery/Desktop/MarketInventory/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_44cb82c3a049728a729dd03785aed651bb1cc4ec/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alhajery/.android/build-cache/e61788fe671043a18a4fc2bf1ad1b48549b101ac/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
-        <dex dex="/Users/alhajery/Desktop/MarketInventory/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4e46abe6d04f9151ab1870e25fb9f028fa14194b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alhajery/.android/build-cache/8000466b0c4a7e5715a3239b3ae072ab5147b053/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
-        <dex dex="/Users/alhajery/Desktop/MarketInventory/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_862d42fa14c0e00408be58792c20331bf75a3353/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/alhajery/Desktop/MarketInventory/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/alhajery/Downloads/NewProject-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/alhajery/Desktop/MarketInventory/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_c73b84a13bfd0095fbf35510229e59c5c2c4ed40/classes.dex" />
+        <dex dex="/Users/alhajery/Downloads/NewProject-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_a10ba776bb32d21ba658fad19d9c5d108bebcef4/classes.dex" />
     </item>
 
 </items>

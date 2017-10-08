@@ -31,12 +31,12 @@ public class MarketHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String SQL_CREATE_ENTRIES = "CREATE TABLE " + MarketContract.ProductEntry.TABLE_NAME + " (" +
+        String SQL_CREATE_ENTRIES = "CREATE TABLE " + MarketContract.ProductEntry.TABLE_NAME + "(" +
                 MarketContract.ProductEntry._ID + " INTEGER PRIMARY KEY," +
                 MarketContract.ProductEntry.COLUMN_NAME + " TEXT," +
                 MarketContract.ProductEntry.COLUMN_PRICE + " INTEGER," +
                 MarketContract.ProductEntry.COLUMN_QUANTITY + " INTEGER," +
-                MarketContract.ProductEntry.COLUMN_PIC + "BLOB)";
+                MarketContract.ProductEntry.COLUMN_PIC + " BLOB)";
         db.execSQL(SQL_CREATE_ENTRIES);
 
     }

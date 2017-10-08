@@ -165,8 +165,7 @@ public class MarketProvider extends ContentProvider {
 
 
     private int updateProduct(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        // If the {@link PetEntry#COLUMN_PET_NAME} key is present,
-        // check that the name value is not null.
+
         if (values.containsKey(MarketContract.ProductEntry.COLUMN_NAME)) {
             String name = values.getAsString(MarketContract.ProductEntry.COLUMN_NAME);
             if (name == null) {
@@ -174,8 +173,6 @@ public class MarketProvider extends ContentProvider {
             }
         }
 
-        // If the {@link PetEntry#COLUMN_PET_GENDER} key is present,
-        // check that the gender value is valid.
         if (values.containsKey(MarketContract.ProductEntry.COLUMN_QUANTITY)) {
             Integer quantity = values.getAsInteger(MarketContract.ProductEntry.COLUMN_QUANTITY);
             if (quantity == 0) {
@@ -200,7 +197,6 @@ public class MarketProvider extends ContentProvider {
             return 0;
         }
 
-        dbHelper = new MarketHelper(getContext());
         SQLiteDatabase database = dbHelper.getWritableDatabase();
 
         return database.update(MarketContract.ProductEntry.TABLE_NAME, values, selection, selectionArgs);

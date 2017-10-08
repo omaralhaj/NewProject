@@ -25,6 +25,7 @@ import java.net.URI;
 import java.sql.Blob;
 
 import static android.R.attr.id;
+import static android.R.attr.x;
 import static java.net.URI.create;
 import static mypackage.marketinventory.R.id.sell;
 
@@ -47,7 +48,7 @@ public class MarketCursorAdapter extends CursorAdapter {
     }
 
     @Override
-    public void bindView(View view,  Context context,  Cursor cursor) {
+    public void bindView(View view, final Context context, Cursor cursor) {
 
         TextView nameView = (TextView) view.findViewById(R.id.list_name);
         ImageView picView = (ImageView) view.findViewById(R.id.list_pic);
@@ -83,7 +84,8 @@ public class MarketCursorAdapter extends CursorAdapter {
 
             priceView.setText("Price: " + String.valueOf(price));
             quantityView.setText("Quantity: " +String.valueOf(quantity[0]));
-            final MarketProvider marketProvider = new MarketProvider();
+
+
             final ContentValues values = new ContentValues();
 
         Button sell = (Button) view.findViewById(R.id.sell);
@@ -96,8 +98,10 @@ public class MarketCursorAdapter extends CursorAdapter {
                     quantityView.setText(String.valueOf(quantity[0]));
                     values.put(MarketContract.ProductEntry.COLUMN_QUANTITY,quantity[0]);
                     Uri x = currentUri;
-                    marketProvider.update(x, values, null,null);
+                    context.getContentResolver().update(x,values,null,null);
+
                 }
+
 
 
                 else if (quantity[0] <= 0) w.show();
