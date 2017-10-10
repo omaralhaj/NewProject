@@ -1,23 +1,9 @@
 package mypackage.marketinventory;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.util.Log;
 
-import java.io.ByteArrayOutputStream;
-
-import static mypackage.marketinventory.MarketContract.ProductEntry.COLUMN_PIC;
-import static mypackage.marketinventory.MarketContract.ProductEntry.TABLE_NAME;
-
-/**
- * Created by Omar on 10/1/17.
- */
 
 public class MarketHelper extends SQLiteOpenHelper {
 
@@ -32,7 +18,7 @@ public class MarketHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String SQL_CREATE_ENTRIES = "CREATE TABLE " + MarketContract.ProductEntry.TABLE_NAME + "(" +
-                MarketContract.ProductEntry._ID + " INTEGER PRIMARY KEY," +
+                MarketContract.ProductEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 MarketContract.ProductEntry.COLUMN_NAME + " TEXT," +
                 MarketContract.ProductEntry.COLUMN_PRICE + " INTEGER," +
                 MarketContract.ProductEntry.COLUMN_QUANTITY + " INTEGER," +
@@ -46,7 +32,6 @@ public class MarketHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + MarketContract.ProductEntry.TABLE_NAME);
         onCreate(db);
     }
-
 
 
 }

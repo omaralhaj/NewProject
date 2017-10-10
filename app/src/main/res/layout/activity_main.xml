@@ -9,26 +9,27 @@
         android:id="@+id/products"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp"
-         />
+        android:layout_margin="16dp" />
 
-    <TextView android:id="@android:id/empty"
+    <TextView
+        android:id="@android:id/empty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="No data"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text="No Products, Please add using the add button"
+        android:textSize="30sp"
+        />
 
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_margin="40dp"
-        android:src="@android:drawable/ic_input_add"
-        />
-
-    
+        android:src="@android:drawable/ic_input_add" />
 
 
 </RelativeLayout>

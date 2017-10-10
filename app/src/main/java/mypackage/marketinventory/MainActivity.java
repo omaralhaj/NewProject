@@ -10,25 +10,22 @@ import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
 
     private static final int MARKET_LOADER = 0;
-    MarketCursorAdapter marketCursorAdapter ;
+    MarketCursorAdapter marketCursorAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-      FloatingActionButton add = (FloatingActionButton) findViewById(R.id.add);
+        FloatingActionButton add = (FloatingActionButton) findViewById(R.id.add);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,53 +34,33 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             }
         });
 
-        marketCursorAdapter = new MarketCursorAdapter(this,null);
+        marketCursorAdapter = new MarketCursorAdapter(this, null);
 
         ListView listView = (ListView) findViewById(R.id.products);
 
-
-
-
-            listView.setAdapter(marketCursorAdapter);
+        listView.setAdapter(marketCursorAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-
                 Intent intent = new Intent(MainActivity.this, ProductDetails.class);
-
-                Uri currentUri = ContentUris.withAppendedId(MarketContract.ProductEntry.CONTENT_URI,id);
-
+                Uri currentUri = ContentUris.withAppendedId(MarketContract.ProductEntry.CONTENT_URI, id);
                 intent.setData(currentUri);
-
                 startActivity(intent);
 
             }
         });
 
         listView.setEmptyView(findViewById(android.R.id.empty));
-
-        getLoaderManager().initLoader(MARKET_LOADER,null,this);
-
-
-
-
-
+        getLoaderManager().initLoader(MARKET_LOADER, null, this);
 
     }
 
 
-
-    private void deleteAllProducts(){
-
-            int rowsDeleted = getContentResolver().delete(MarketContract.ProductEntry.CONTENT_URI, null, null);
-            Log.v("MainActivity"," Rows deleted: " + rowsDeleted);
-        }
-
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
 
-        String projection [] = {
+        String projection[] = {
                 MarketContract.ProductEntry._ID,
                 MarketContract.ProductEntry.COLUMN_NAME,
                 MarketContract.ProductEntry.COLUMN_PIC,
@@ -98,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 null,
                 null,
                 null
-                );
+        );
 
     }
 
@@ -106,14 +83,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
 
         marketCursorAdapter.swapCursor(cursor);
-
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
 
         marketCursorAdapter.swapCursor(null);
-
 
     }
 }
